@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz CTFL 4.0.1 - BSTQB/ISTQB</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section id="telaInicial" class="card hero">
+      <span class="etiqueta">Preparação CTFL v4.0.1 em português-BR</span>
+      <h1>Quiz de Revisão CTFL</h1>
+      <p class="subtitulo">
+        Banco revisado com questões autorais alinhadas aos Objetivos de Aprendizagem do CTFL v4.0.1. Foram removidos tópicos defasados ou rebaixados de versões antigas, com foco no que pode cair na prova BSTQB/ISTQB atual.
+      </p>
+
+      <div class="painel-config">
+        <div class="campo">
+          <label for="modoQuiz">Modo de estudo</label>
+          <select id="modoQuiz">
+            <option value="simulado40" selected>Simulado CTFL - 40 questões</option>
+            <option value="20">Revisão rápida - 20 questões</option>
+            <option value="60">Revisão média - 60 questões</option>
+            <option value="120">Revisão longa - 120 questões</option>
+            <option value="320">Banco completo - 320 questões</option>
+          </select>
+          <p class="dica">O simulado de 40 questões mantém a distribuição oficial: 8, 6, 4, 11, 9 e 2.</p>
+        </div>
+
+        <div class="campo">
+          <div class="linha-label">
+            <label>Capítulos</label>
+            <button id="btnTodos" class="btn-mini" type="button">marcar/desmarcar todos</button>
+          </div>
+          <div class="checkboxes">
+            <label><input type="checkbox" class="filtro-capitulo" value="1" checked> 1. Fundamentos de Teste</label>
+            <label><input type="checkbox" class="filtro-capitulo" value="2" checked> 2. Testes ao longo do SDLC</label>
+            <label><input type="checkbox" class="filtro-capitulo" value="3" checked> 3. Teste Estático</label>
+            <label><input type="checkbox" class="filtro-capitulo" value="4" checked> 4. Análise e Modelagem de Teste</label>
+            <label><input type="checkbox" class="filtro-capitulo" value="5" checked> 5. Gerenciamento das Atividades de Teste</label>
+            <label><input type="checkbox" class="filtro-capitulo" value="6" checked> 6. Ferramentas de Teste</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="resumo-banco">
+        <div><strong id="totalBanco">320</strong><span>questões no banco</span></div>
+        <div><strong>64</strong><span>LOs cobertos</span></div>
+        <div><strong>26/40</strong><span>mínimo para aprovação</span></div>
+      </div>
+
+      <button id="btnIniciar" class="btn principal">Iniciar revisão</button>
+      <p class="aviso">
+        Após marcar a alternativa, o comentário aparece sobre a questão com fundo desfocado e fica travado por 20 segundos. Não há botão de voltar nem “finalizar agora”.
+      </p>
+    </section>
+
+    <section id="telaQuiz" class="card quiz escondido">
+      <header class="topo-quiz">
+        <div>
+          <span id="capituloAtual" class="chip">Capítulo</span>
+          <span id="loAtual" class="chip">LO</span>
+          <span id="nivelAtual" class="chip neutro">Nível</span>
+        </div>
+        <div class="placar">
+          <span>Pontos: <strong id="pontuacao">0</strong></span>
+          <span>Acertos: <strong id="acertos">0</strong></span>
+          <span>Erros: <strong id="erros">0</strong></span>
+        </div>
+      </header>
+
+      <div class="progresso-wrap" aria-label="Progresso do quiz">
+        <div id="barraProgresso" class="barra-progresso"></div>
+      </div>
+      <p id="contador" class="contador">Questão 1 de 40</p>
+
+      <article id="cartaoQuestao" class="cartao-questao">
+        <h2 id="enunciado">Carregando questão...</h2>
+        <div id="alternativas" class="alternativas"></div>
+      </article>
+
+      <div class="acoes">
+        <button id="btnProxima" class="btn secundario" disabled>Próxima questão</button>
+      </div>
+    </section>
+
+    <section id="telaResultado" class="card resultado escondido">
+      <span class="etiqueta">Resultado final</span>
+      <h1>Resumo da revisão</h1>
+      <div id="resultadoGeral" class="resultado-geral"></div>
+      <div id="resumoCapitulos" class="tabela-resumo"></div>
+      <div id="listaErros" class="lista-erros"></div>
+      <div class="acoes centro">
+        <button id="btnReiniciar" class="btn principal">Reiniciar quiz</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlayFeedback" class="overlay-feedback escondido" role="dialog" aria-live="polite" aria-modal="true">
+    <div id="janelaFeedback" class="janela-feedback">
+      <span id="seloFeedback" class="selo-feedback">Feedback</span>
+      <h2 id="tituloFeedback"></h2>
+      <p id="textoFeedback"></p>
+      <div class="resposta-certa-box">
+        <strong>Resposta correta:</strong>
+        <span id="respostaCorretaTexto"></span>
+      </div>
+      <button id="btnContinuarFeedback" class="btn principal btn-continuar-feedback" type="button">Continuar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
