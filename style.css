@@ -108,3 +108,118 @@ th { background:#f8fafc; }
 /* Ajustes v3 */
 #loAtual { background: #ede9fe; color: #5b21b6; }
 .erro-item small { display:block; color: var(--muted); margin-bottom: 4px; }
+
+
+/* Alternativas mais equilibradas visualmente */
+.alternativa {
+  min-height: 58px;
+}
+.alternativa span:last-child {
+  display: block;
+}
+
+/* Botão de tema */
+.tema-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 50;
+  background: rgba(255,255,255,.92);
+  color: var(--azul-escuro);
+  border: 1px solid var(--linha);
+  box-shadow: 0 10px 24px rgba(15,23,42,.12);
+}
+
+/* Modo escuro */
+body.dark-mode {
+  --fundo: #0b1220;
+  --card: #111827;
+  --texto: #e5e7eb;
+  --muted: #a8b3c7;
+  --linha: #334155;
+  --azul: #60a5fa;
+  --azul-escuro: #93c5fd;
+  --verde: #22c55e;
+  --verde-claro: rgba(34, 197, 94, 0.18);
+  --vermelho: #f87171;
+  --vermelho-claro: rgba(248, 113, 113, 0.18);
+  --sombra: 0 18px 40px rgba(0, 0, 0, 0.35);
+  background: radial-gradient(circle at top left, rgba(96,165,250,.14), transparent 34rem), linear-gradient(135deg, #020617, #0b1220);
+}
+
+body.dark-mode .card,
+body.dark-mode .janela-feedback {
+  background: rgba(15, 23, 42, 0.98);
+  border-color: #334155;
+  color: var(--texto);
+}
+
+body.dark-mode .tema-toggle {
+  background: rgba(15, 23, 42, 0.94);
+  color: var(--azul-escuro);
+  border-color: #334155;
+}
+
+body.dark-mode .campo,
+body.dark-mode .resumo-banco div,
+body.dark-mode .resultado-geral .box,
+body.dark-mode .placar span,
+body.dark-mode .resposta-certa-box,
+body.dark-mode th {
+  background: #111827;
+  border-color: #334155;
+}
+
+body.dark-mode select,
+body.dark-mode .alternativa,
+body.dark-mode .erro-item {
+  background: #0f172a;
+  color: var(--texto);
+  border-color: #334155;
+}
+
+body.dark-mode .alternativa:hover:not(:disabled) {
+  border-color: #60a5fa;
+  box-shadow: 0 10px 22px rgba(96, 165, 250, 0.14);
+}
+
+body.dark-mode .chip.neutro,
+body.dark-mode .letra {
+  background: #1e293b;
+  color: #dbeafe;
+}
+
+body.dark-mode .etiqueta,
+body.dark-mode .chip {
+  background: rgba(96, 165, 250, 0.18);
+  color: #bfdbfe;
+}
+
+body.dark-mode .alternativa.correta {
+  background: rgba(22, 163, 74, 0.22);
+  border-color: #22c55e;
+}
+
+body.dark-mode .alternativa.errada {
+  background: rgba(220, 38, 38, 0.22);
+  border-color: #f87171;
+}
+
+body.dark-mode .progresso-wrap {
+  background: #1e293b;
+}
+
+body.dark-mode table,
+body.dark-mode td,
+body.dark-mode th {
+  color: var(--texto);
+  border-color: #334155;
+}
+
+@media (max-width:760px) {
+  .tema-toggle {
+    position: static;
+    width: 100%;
+    margin: 8px 0 10px;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "versao": "v5",
+  "alteracoes": [
+    "Distratores reescritos para reduzir alternativas absurdas ou fora do tópico.",
+    "Ajustes pontuais em enunciados K3 para evitar mais de uma resposta aceitável.",
+    "Alternativas com assunto mais próximo e linguagem mais parecida.",
+    "Modo escuro com persistência em localStorage.",
+    "Feedback continua em modal com botão Continuar, sem espera de tempo."
+  ],
+  "total_questoes": 320
+}

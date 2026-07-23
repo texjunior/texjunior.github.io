@@ -35,3 +35,11 @@ git add .
 git commit -m "Revisa e amplia banco CTFL v4.0.1"
 git push
 ```
+
+
+## Versão v5
+
+- Alternativas revisadas para reduzir respostas óbvias por tamanho.
+- Distratores reescritos para ficarem no mesmo domínio da resposta correta.
+- Inclusão de botão de modo claro/escuro com preferência salva no navegador.
+- Mantido o avanço manual pelo botão Continuar no feedback.
